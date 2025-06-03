@@ -36,7 +36,7 @@ pub struct Release {
     pub backend: Option<Backend>,
 
     /// Fetch department for the release.
-    pub  fetch_dept: Option<String>,
+    pub fetch_depth: Option<String>,
 }
 
 #[derive(Clone)]
@@ -106,8 +106,8 @@ impl From<Release> for Step<Use> {
             step = step.add_with(("backend", backend.to_string()));
         }
         
-        if let Some(fetch_depth) = value.fetch_dept {
-            step = step.add_with(("fetch-dept", fetch_depth));
+        if let Some(fetch_depth) = value.fetch_depth {
+            step = step.add_with(("fetch-depth", fetch_depth));
         }
 
         step
