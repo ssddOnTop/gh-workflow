@@ -416,7 +416,7 @@ impl Env {
         let mut map = IndexMap::new();
         map.insert(
             "GITHUB_TOKEN".to_string(),
-            Value::from("${{ secrets.GITHUB_TOKEN }}"),
+            Value::from("${{ secrets.GH_TOKEN }}"),
         );
         Env(map)
     }
