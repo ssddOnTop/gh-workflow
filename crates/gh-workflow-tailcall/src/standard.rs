@@ -147,7 +147,7 @@ impl StandardWorkflow {
                 "${{ secrets.CARGO_REGISTRY_TOKEN }}",
             ))
             .permissions(self.write_permissions())
-            .add_step(Release::default().command(cmd).fetch_dept("0"))
+            .add_step(Release::default().command(cmd).fetch_depth(0usize))
     }
 
     fn lint_job(&self, auto_fix: bool) -> Job {

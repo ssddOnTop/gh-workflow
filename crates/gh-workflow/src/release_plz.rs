@@ -36,7 +36,7 @@ pub struct Release {
     pub backend: Option<Backend>,
 
     /// Fetch department for the release.
-    pub fetch_depth: Option<String>,
+    pub fetch_depth: Option<usize>,
 }
 
 #[derive(Clone)]
