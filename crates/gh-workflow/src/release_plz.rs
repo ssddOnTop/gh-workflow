@@ -34,6 +34,9 @@ pub struct Release {
 
     /// Forge backend. Valid values: github, gitea. (Defaults to github).
     pub backend: Option<Backend>,
+
+    /// Fetch department for the release.
+    pub  fetch_dept: Option<String>,
 }
 
 #[derive(Clone)]
@@ -101,6 +104,10 @@ impl From<Release> for Step<Use> {
 
         if let Some(backend) = value.backend {
             step = step.add_with(("backend", backend.to_string()));
+        }
+        
+        if let Some(fetch_depth) = value.fetch_dept {
+            step = step.add_with(("fetch-dept", fetch_depth));
         }
 
         step
